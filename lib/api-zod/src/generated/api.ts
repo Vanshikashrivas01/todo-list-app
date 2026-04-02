@@ -14,3 +14,56 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * @summary List all tasks
+ */
+export const ListTasksResponseItem = zod.object({
+  id: zod.number(),
+  text: zod.string(),
+  done: zod.boolean(),
+  createdAt: zod.coerce.date(),
+});
+export const ListTasksResponse = zod.array(ListTasksResponseItem);
+
+/**
+ * @summary Create a new task
+ */
+export const CreateTaskBody = zod.object({
+  text: zod.string(),
+});
+
+/**
+ * @summary Update a task (e.g. toggle done)
+ */
+export const UpdateTaskParams = zod.object({
+  id: zod.coerce.number(),
+});
+
+export const UpdateTaskBody = zod.object({
+  text: zod.string().optional(),
+  done: zod.boolean().optional(),
+});
+
+export const UpdateTaskResponse = zod.object({
+  id: zod.number(),
+  text: zod.string(),
+  done: zod.boolean(),
+  createdAt: zod.coerce.date(),
+});
+
+/**
+ * @summary Delete a task
+ */
+export const DeleteTaskParams = zod.object({
+  id: zod.coerce.number(),
+});
+
+/**
+ * @summary Get task completion statistics
+ */
+export const GetTaskStatsResponse = zod.object({
+  total: zod.number(),
+  completed: zod.number(),
+  pending: zod.number(),
+});

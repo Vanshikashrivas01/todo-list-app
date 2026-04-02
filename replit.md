@@ -48,6 +48,18 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
 - `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
+## Artifacts
+
+### `artifacts/todo-app` (`@workspace/todo-app`)
+
+React + Vite To-Do List web app.
+
+- Entry: `src/main.tsx`, `src/App.tsx` (wouter router at `/`)
+- Main page: `src/pages/home.tsx` — task list with add/toggle/delete and progress bar
+- Theme: soft sage green and warm cream palette, Outfit font
+- Uses `@workspace/api-client-react` hooks for all API calls
+- Serves at `/` (root)
+
 ## Packages
 
 ### `artifacts/api-server` (`@workspace/api-server`)

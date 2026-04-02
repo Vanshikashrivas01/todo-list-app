@@ -6,4 +6,8 @@
  * OpenAPI spec version: 0.1.0
  */
 
+export * from "./createTaskBody";
 export * from "./healthStatus";
+export * from "./task";
+export * from "./taskStats";
+export * from "./updateTaskBody";
