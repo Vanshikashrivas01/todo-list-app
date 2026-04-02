@@ -15,5 +15,5 @@ A simple To-Do List application built using Python and Streamlit.
 - JSON
 
 ## Live Demo
-Paste your Replit link here
+https://replit.com/@vanshikashriva3/Daily-Planner
 
